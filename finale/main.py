@@ -11,15 +11,28 @@ def plot_lcs_complexity(filename):
       df_filtered = df_filtered.sort_values('taille_combinee')
 
       plt.figure(figsize=(10, 6))
-      plt.fill_between(df_filtered['taille_combinee'], 
-                      df_filtered['tempMoy'],
+      plt.plot(df_filtered['taille_combinee'], 
+                      df_filtered['tempsMoyen'],
                       0,
                       color='skyblue',
                       alpha=0.6)
       plt.xlabel('Taille combinée (taille1 + taille2)')
-      plt.ylabel('Temps d\'exécution (tempMoy)')
+      plt.ylabel('Temps d\'exécution (tempsMoyen)')
       plt.title('Graphique en aire de la Complexité LCS')
       plt.grid(True, alpha=0.3)
+
+      plt.figure(figsize=(10, 6))
+      plt.plot(df_filtered['taille_combinee'], 
+                      df_filtered['TailleMem'],
+                      0,
+                      color='skyblue',
+                      alpha=0.6)
+      plt.xlabel('Taille combinée (taille1 + taille2)')
+      plt.ylabel('Temps d\'exécution (TailleMem)')
+      plt.title('Graphique en aire de la Complexité LCS')
+      plt.grid(True, alpha=0.3)
+
+
       plt.show()
       
   except FileNotFoundError:
