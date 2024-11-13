@@ -54,11 +54,11 @@ int lcsDPOptimized(char *X, char *Y, int m, int n) {
 
 int main() {
     srand(time(0));  
-    int numTests = 100;  
+    int numTests = 30;  
     int numStrings = 100; 
-    char X[25], Y[25]; 
+    char X[30], Y[30]; 
     const char* filename = "complexite";
-    calculerComplexite(X, Y, lcsDP,LCSRecursive, numTests, numStrings, filename,"Aleatoire","grande");
+    calculerComplexite(X, Y, LCSRecursive,lcsDP,lcsDPOptimized, numTests, numStrings, filename,"PireCas");
     return 0;
 }
    
